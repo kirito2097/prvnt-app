@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────
+   PRVNT Design System v3 — Premium Health Platform
+   Typography: Inter · Scale: 11/13/15/17/20/24/28/32/40
+   Spacing: 4/8/12/16/20/24/32/40 (4px grid)
+   Radius: 12/16/20/24/28
+   ───────────────────────────────────────────────────────── */
+
+:root {
+  /* Backgrounds */
+  --bg:         #F4F3EE;
+  --bg-alt:     #ECEAE4;
+  --surface:    #FFFFFF;
+  --surface-2:  rgba(0,0,0,0.025);
+  --surface-hi: rgba(255,255,255,0.95);
+
+  /* Borders */
+  --border:     rgba(0,0,0,0.07);
+  --border-md:  rgba(0,0,0,0.11);
+
+  /* Text */
+  --t1:  #0D0D12;
+  --t2:  #6B6B82;
+  --t3:  #A0A0B5;
+  --inv: #FFFFFF;
+
+  /* Accent — PRVNT Signature Blue */
+  --accent:     #2563EB;
+  --accent-s:   rgba(37,99,235,0.12);
+
+  /* Status colors */
+  --green:    #00C48C;  --green-s:  rgba(0,196,140,0.10);
+  --amber:    #F59E0B;  --amber-s:  rgba(245,158,11,0.10);
+  --red:      #FF4466;  --red-s:    rgba(255,68,102,0.10);
+  --blue:     #5B7FFF;  --blue-s:   rgba(91,127,255,0.10);
+  --purple:   #8B6FFF;  --purple-s: rgba(139,111,255,0.10);
+  --teal:     #06B6D4;  --teal-s:   rgba(6,182,212,0.10);
+
+  /* Score metric colors */
+  --c-recovery:  #00C48C;
+  --c-sleep:     #7B9FFF;
+  --c-readiness: #A07BFF;
+  --c-hrv:       #06B6D4;
+  --c-strain:    #FF7A5A;
+
+  /* Navigation — light glass pill */
+  --nav-bg:     rgba(255,255,255,0.85);
+  --nav-border: rgba(0,0,0,0.08);
+
+  /* Shadows */
+  --sh-xs: 0 1px 3px rgba(0,0,0,0.06);
+  --sh-sm: 0 2px 8px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04);
+  --sh-md: 0 4px 20px rgba(0,0,0,0.09);
+  --sh-lg: 0 12px 48px rgba(0,0,0,0.13);
+
+  /* Radius tokens */
+  --r-sm:   12px;
+  --r-md:   16px;
+  --r-lg:   20px;
+  --r-xl:   24px;
+  --r-2xl:  28px;
+  --r-full: 9999px;
+}
+
+/* ── Dark mode — Apple true-black + Material You tonal palette */
+.dark {
+  /* True-black system like Apple Fitness */
+  --bg:         #000000;
+  --bg-alt:     #0A0A0A;
+  --surface:    #1C1C1E;
+  --surface-2:  #2C2C2E;
+  --surface-hi: #3A3A3C;
+
+  /* Hairline borders like iOS */
+  --border:    rgba(255,255,255,0.09);
+  --border-md: rgba(255,255,255,0.14);
+
+  /* Apple SF text alpha hierarchy */
+  --t1:  #FFFFFF;
+  --t2:  rgba(235,235,245,0.75);
+  --t3:  rgba(235,235,245,0.38);
+  --inv: #000000;
+
+  /* PRVNT Signature — vivid blue on black */
+  --accent:        #0A84FF;
+  --accent-bright: #60A5FA;
+  --accent-s:      rgba(10,132,255,0.16);
+
+  /* Apple Fitness vivid system palette */
+  --green:    #30D158;  --green-s:  rgba(48,209,88,0.15);
+  --amber:    #FFD60A;  --amber-s:  rgba(255,214,10,0.15);
+  --red:      #FF375F;  --red-s:    rgba(255,55,95,0.15);
+  --blue:     #0A84FF;  --blue-s:   rgba(10,132,255,0.15);
+  --purple:   #BF5AF2;  --purple-s: rgba(191,90,242,0.15);
+  --teal:     #32D2FF;  --teal-s:   rgba(50,210,255,0.15);
+
+  /* Vivid Apple Fitness metric colors */
+  --c-recovery:  #30D158;   /* Apple move-ring green  */
+  --c-sleep:     #0A84FF;   /* Apple system blue      */
+  --c-readiness: #BF5AF2;   /* Apple system purple    */
+  --c-hrv:       #32D2FF;   /* Apple cyan             */
+  --c-strain:    #FF375F;   /* Apple system red       */
+
+  /* Floating glass nav */
+  --nav-bg:     rgba(28,28,30,0.82);
+  --nav-border: rgba(255,255,255,0.10);
+
+  /* Deep shadows on black */
+  --sh-xs: 0 1px 4px rgba(0,0,0,0.55);
+  --sh-sm: 0 2px 10px rgba(0,0,0,0.60);
+  --sh-md: 0 6px 24px rgba(0,0,0,0.65);
+  --sh-lg: 0 16px 56px rgba(0,0,0,0.75);
+}
+
+/* ─────────────────────────────────────────────────────────
+   RESET & BASE
+   ───────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  margin: 0; padding: 0;
+  height: 100%;
+  height: -webkit-fill-available;
+}
+
+body {
+  margin: 0; padding: 0;
+  height: 100%;
+  min-height: -webkit-fill-available;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--t1);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-feature-settings: 'cv01','cv02','cv03','cv04';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  height: 100vh;
+  height: 100dvh; /* dvh = dynamic viewport height, accounts for mobile browser chrome */
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+/* ─────────────────────────────────────────────────────────
+   SCROLLBAR & SCROLL
+   ───────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 0; background: transparent; }
+
+.page-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────
+   CARD UTILITIES
+   ───────────────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-xs);
+}
+
+.card-glass {
+  background: var(--surface);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+}
+
+/* Hero card — always dark, high-contrast */
+.card-hero {
+  background: linear-gradient(145deg, #141424 0%, #0C0C18 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r-2xl);
+}
+
+/* ─────────────────────────────────────────────────────────
+   ANIMATIONS
+   ───────────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: calc(400px + 100%) 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--surface) 8%, var(--surface-hi) 18%, var(--surface) 33%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--r-sm);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fade-up 0.35s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+/* ─────────────────────────────────────────────────────────
+   BUTTONS & INTERACTION
+   ───────────────────────────────────────────────────────── */
+button { font-family: inherit; cursor: pointer; border: none; background: none; padding: 0; }
+
+.btn-primary {
+  display: flex; align-items: center; justify-content: center;
+  height: 52px; border-radius: var(--r-xl);
+  background: var(--t1); color: var(--inv);
+  font-size: 15px; font-weight: 600;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+.btn-primary:active { transform: scale(0.97); opacity: 0.9; }
+.btn-primary:disabled { background: var(--border-md); color: var(--t3); }
+
+/* ─────────────────────────────────────────────────────────
+   STATUS PILLS
+   ───────────────────────────────────────────────────────── */
+.pill {
+  display: inline-flex; align-items: center;
+  padding: 3px 10px; border-radius: var(--r-full);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+}
+.pill-green  { background: var(--green-s);  color: var(--green); }
+.pill-amber  { background: var(--amber-s);  color: var(--amber); }
+.pill-red    { background: var(--red-s);    color: var(--red); }
+.pill-blue   { background: var(--blue-s);   color: var(--blue); }
+.pill-purple { background: var(--purple-s); color: var(--purple); }
+.pill-teal   { background: var(--teal-s);   color: var(--teal); }
+
+/* Hide scrollbar utility */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Section labels */
+.sec-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--t3); margin-bottom: 12px;
+  display: block;
+}
